@@ -72,7 +72,8 @@ class c2c_CommentLinkModerationWhitelist {
 	 * @since 1.0
 	 */
 	public static function init() {
-		add_action( 'init', array( __CLASS__, 'do_init' ) );
+		add_action( 'init',       array( __CLASS__, 'do_init' ) );
+		add_action( 'admin_init', array( __CLASS__, 'initialize_setting' ), 9 );
 	}
 
 	/**
@@ -87,6 +88,103 @@ class c2c_CommentLinkModerationWhitelist {
 		// Register hooks
 		add_filter( 'comment_max_links_url', array( __CLASS__, 'comment_max_links_url' ), 10, 3 );
 	}
+
+	/**
+	 * Initializes setting.
+	 */
+	public static function initialize_setting() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		register_setting(
+			'discussion',
+			self::$setting_name,
+			array(
+				'type'              => 'string',
+				'description'       => __( 'List of URLs that should not count towards the moderation max number of links.', 'comment-link-moderation-whitelist' ),
+				'sanitize_callback' => array( __CLASS__, 'sanitize_option' ),
+				'show_in_rest'      => false,
+				'default'           => '',
+			)
+		);
+
+		add_settings_field(
+			self::$setting_name,
+			__( 'Comment Link Moderation Whitelist', 'comment-link-moderation-whitelist' ),
+			array( __CLASS__, 'display_option' ),
+			'discussion',
+			'default',
+			array( 'label_for' => esc_attr( self::$setting_name ) )
+		);
+	}
+
+	/**
+	 * Sanitizes the option.
+	 *
+	 * Basically duplicates core's sanitization of 'moderation_keys' setting.
+	 *
+	 * @since 1.0
+	 *
+	 * @param string $value The value to sanitize.
+	 * @return string
+	 */
+	public static function sanitize_option( $value ) {
+		global $wpdb;
+
+		$value = $wpdb->strip_invalid_text_for_column( $wpdb->options, 'option_value', $value );
+
+		if ( is_wp_error( $value ) ) {
+			$error = $value->get_error_message();
+		} else {
+			$value = explode( "\n", $value );
+			$value = array_filter( array_map( 'trim', $value ) );
+			$value = array_unique( $value );
+			$value = implode( "\n", $value );
+		}
+
+		if ( ! empty( $error ) ) {
+			$value = get_option( self::$setting_name );
+			if ( function_exists( 'add_settings_error' ) ) {
+				add_settings_error( self::$setting_name, 'invalid_' . self::$setting_name, $error );
+			}
+		}
+
+		return $value;
+	}
+
+	/**
+	 * Displays admin setting field.
+	 *
+	 * @since 1.0
+	 *
+	 * @param array $args
+	 */
+	public static function display_option( $args ) {
+		$value = trim( get_option( self::$setting_name ) );
+
+		echo '<fieldset>';
+		echo '<legend class="screen-reader-text"><span>' . __( 'Comment Link Moderation Whitelist', 'comment-link-moderation-whitelist' ) . '</span></legend>';
+
+		printf(
+			'<p><label for="%s">%s</label></p>',
+			esc_attr( self::$setting_name ),
+			__( 'The URLs listed below will not count against the moderation link limit specified just above. One domain per line and omit the protocol (e.g. use <em>wordpress.org</em> or <em>wordpress.org/plugins/</em>, not <em>https://wordpress.org</em>).', 'comment-link-moderation-whitelist' )
+		);
+
+		printf(
+			'<p><textarea name="%s" rows="5" cols="50" id="%s" class="large-text code">%s</textarea></p>',
+			esc_attr( self::$setting_name ),
+			esc_attr( self::$setting_name ),
+			esc_textarea( get_option( self::$setting_name ) )
+		);
+
+		// Add inline JS to move Comment Blacklist field to the bottom.
+		echo "<script>try { jQuery('#blacklist_keys').closest('tr').appendTo(jQuery('#comment_moderation').closest('tbody')) } catch (err) {}</script>";
+
+		echo "</fieldset>\n";
+	}
+
 
 	/**
 	 * Adjust the max number of links permitted in comments to disregard the
