@@ -223,6 +223,9 @@ class c2c_CommentLinkModerationWhitelist {
 			// Filter out protocol.
 			$url = str_replace( array( 'http://', 'https://' ), '', $url );
 
+			// Remove trailing slash.
+			$url = rtrim( $url, '/' );
+
 			// Count the number of occurrences of this particular whitelisted URL.
 			$num_whitelist_links = preg_match_all( '%<a [^>]*href=[\'\"]https?://[^/>]*' . preg_quote( $url, '%' ) . '%i', $comment, $out );
 

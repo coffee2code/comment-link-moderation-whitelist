@@ -111,4 +111,10 @@ class Comment_Link_Moderation_Whitelist_Test extends WP_UnitTestCase {
 		$this->assertTrue( $this->check_comment() );
 	}
 
+	public function test_trailing_slash_in_whitelist_url_still_matches_url_without_slash() {
+		update_option( self::$setting_name, 'example.com/' );
+
+		$this->assertTrue( $this->check_comment() );
+	}
+
 }
