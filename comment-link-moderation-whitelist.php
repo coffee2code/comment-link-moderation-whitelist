@@ -82,10 +82,10 @@ class c2c_CommentLinkModerationWhitelist {
 	 * @since 1.0
 	 */
 	public static function do_init() {
-		// Load textdomain
+		// Load textdomain.
 		load_plugin_textdomain( 'comment-link-moderation-whitelist' );
 
-		// Register hooks
+		// Register hooks.
 		add_filter( 'comment_max_links_url', array( __CLASS__, 'comment_max_links_url' ), 10, 3 );
 	}
 
@@ -158,7 +158,7 @@ class c2c_CommentLinkModerationWhitelist {
 	 *
 	 * @since 1.0
 	 *
-	 * @param array $args
+	 * @param array $args Array of display arguments.
 	 */
 	public static function display_option( $args ) {
 		$value = trim( get_option( self::$setting_name ) );
@@ -187,7 +187,7 @@ class c2c_CommentLinkModerationWhitelist {
 
 
 	/**
-	 * Adjust the max number of links permitted in comments to disregard the
+	 * Adjusts the max number of links permitted in comments to disregard the
 	 * number of whitelisted links.
 	 *
 	 * @since 1.0
