@@ -8,7 +8,7 @@
  * Text Domain: comment-link-moderation-whitelist
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Description: Tracks the user who trashed a post and when they trashed it. Displays that info as columns in admin trashed posts listings.
+ * Description: Allows for whitelisted URLs to not count against the comment moderation max number of links limit.
  *
  * Compatible with WordPress 4.8 through 4.9+.
  *
