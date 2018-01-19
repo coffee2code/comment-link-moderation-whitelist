@@ -75,12 +75,12 @@ class Comment_Link_Moderation_Whitelist_Test extends WP_UnitTestCase {
 	//
 
 
-	public function test_plugin_version() {
-		$this->assertEquals( '1.0', c2c_CommentLinkModerationWhitelist::version() );
-	}
-
 	public function test_class_is_available() {
 		$this->assertTrue( class_exists( 'c2c_CommentLinkModerationWhitelist' ) );
+	}
+
+	public function test_plugin_version() {
+		$this->assertEquals( '1.0', c2c_CommentLinkModerationWhitelist::version() );
 	}
 
 	// Duplicates core test of this behavior.
@@ -99,6 +99,12 @@ class Comment_Link_Moderation_Whitelist_Test extends WP_UnitTestCase {
 		$this->assertTrue( $this->check_comment() );
 	}
 
+	public function test_link_count_still_exceeded_if_different_domain_is_whitelisted() {
+		update_option( self::$setting_name, 'example2.com' );
+
+		$this->assertFalse( $this->check_comment() );
+	}
+
 	public function test_link_count_not_exceeded_if_whitelisted_domain_includes_path() {
 		update_option( self::$setting_name, 'example.com/docs' );
 
@@ -109,6 +115,18 @@ class Comment_Link_Moderation_Whitelist_Test extends WP_UnitTestCase {
 		update_option( self::$setting_name, 'https://example.com' );
 
 		$this->assertTrue( $this->check_comment() );
+	}
+
+	public function test_whitelisted_url_still_whitelisted_when_one_of_many() {
+		update_option( self::$setting_name, "nothing.com\nexample.com\nsomething.com" );
+
+		$this->assertTrue( $this->check_comment() );
+	}
+
+	public function test_link_count_exceeded_by_links_to_same_domain_but_not_whitelisted_path() {
+		update_option( self::$setting_name, 'example.com/docs' );
+
+		$this->assertFalse( $this->check_comment( 2, array( 'example.com', 'example.com/info', 'example.com/docs' ) ) );
 	}
 
 	public function test_trailing_slash_in_whitelist_url_still_matches_url_without_slash() {
