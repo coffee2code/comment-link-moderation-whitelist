@@ -23,6 +23,12 @@
 
 /*
  * TODO:
+ * - Support (vai UI setting and/or constant) the ability to define an
+ *   alternative max links limit that takes into account raw link count (so the
+ *   plugin can't be abused to post, say, 100 whitelisted URLs)
+ * - Add support for constant to disable admin UI and instead use whitelisted
+ *   URLs defined via constnat.
+ * - Add filter so list of whitelisted URLs can be programmatically modified.
  */
 
 /*
