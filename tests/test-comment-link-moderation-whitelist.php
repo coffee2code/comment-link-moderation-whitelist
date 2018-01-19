@@ -57,7 +57,11 @@ class Comment_Link_Moderation_Whitelist_Test extends WP_UnitTestCase {
 		} else {
 			$comment  = 'This is a comment with';
 			foreach ( (array) $link_urls as $i => $link ) {
-				$comment .= ' <a href="http://' . $link . '">link #' . $i . '</a>';
+				// Prefix a protocol if one wasn't specified.
+				if ( false === strpos( $link, 'http' ) ) {
+					$link = 'https://' . $link;
+				}
+				$comment .= ' <a href="' . $link . '">link #' . $i . '</a>';
 			}
 			$comment .= '.';
 		}
@@ -99,6 +103,12 @@ class Comment_Link_Moderation_Whitelist_Test extends WP_UnitTestCase {
 		update_option( self::$setting_name, 'example.com/docs' );
 
 		$this->assertTrue( $this->check_comment( 2, array( 'example.com', 'example.com/docs/doc-a', 'example.com/docs/doc-b' ) ) );
+	}
+
+	public function test_whitelisted_url_with_protocol_still_whitelisted() {
+		update_option( self::$setting_name, 'https://example.com' );
+
+		$this->assertTrue( $this->check_comment() );
 	}
 
 }

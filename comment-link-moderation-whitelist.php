@@ -169,7 +169,7 @@ class c2c_CommentLinkModerationWhitelist {
 		printf(
 			'<p><label for="%s">%s</label></p>',
 			esc_attr( self::$setting_name ),
-			__( 'The URLs listed below will not count against the moderation link limit specified just above. One domain per line and omit the protocol (e.g. use <em>wordpress.org</em> or <em>wordpress.org/plugins/</em>, not <em>https://wordpress.org</em>).', 'comment-link-moderation-whitelist' )
+			__( 'The URLs listed below will not count against the moderation link limit specified just above. One domain per line. Protocol (i.e. "http://") is not necessary. Subdomains are inferred and don\'t need to be listed individually (e.g. <em>wordpress.org</em> also implies <em>developer.wordpress.org</em>).', 'comment-link-moderation-whitelist' )
 		);
 
 		printf(
@@ -219,6 +219,9 @@ class c2c_CommentLinkModerationWhitelist {
 
 		// Check if any whitelisted URLs are present in comment.
 		foreach ( $whitelist_urls as $url ) {
+
+			// Filter out protocol.
+			$url = str_replace( array( 'http://', 'https://' ), '', $url );
 
 			// Count the number of occurrences of this particular whitelisted URL.
 			$num_whitelist_links = preg_match_all( '%<a [^>]*href=[\'\"]https?://[^/>]*' . preg_quote( $url, '%' ) . '%i', $comment, $out );
