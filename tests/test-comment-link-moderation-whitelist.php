@@ -135,4 +135,25 @@ class Comment_Link_Moderation_Whitelist_Test extends WP_UnitTestCase {
 		$this->assertTrue( $this->check_comment() );
 	}
 
+	public function test_fallball_comment_max_links_limit_enforced_regardless_of_whitelist() {
+		update_option( self::$setting_name, 'example.com' );
+
+		$this->assertTrue( $this->check_comment( 2, array_fill( 0, 24, 'example.com' ) ) );
+		$this->assertFalse( $this->check_comment( 2, array_fill( 0, 25, 'example.com' ) ) );
+	}
+
+	public function test_fallball_comment_max_links_limit_ignored_if_does_not_exceed_max_links_limit() {
+		update_option( self::$setting_name, 'example.com' );
+
+		$this->assertTrue( $this->check_comment( 26, array_fill( 0, 25, 'example.com' ) ) );
+		$this->assertTrue( $this->check_comment( 50, array_fill( 0, 56, 'example.com' ) ) );
+	}
+
+	public function test_fallball_comment_max_links_limit_adjusted_to_exceed_large_max_links_limit() {
+		update_option( self::$setting_name, 'example.com' );
+
+		$this->assertTrue( $this->check_comment( 50, array_fill( 0, 59, 'example.com' ) ) );
+		$this->assertFalse( $this->check_comment( 50, array_fill( 0, 60, 'example.com' ) ) );
+	}
+
 }

@@ -212,6 +212,18 @@ class c2c_CommentLinkModerationWhitelist {
 			return $num_links;
 		}
 
+		// Prevent abuse by enforcing a max link limit regardless of whitelist.
+		$max_max_links = 25; // TODO: Make this a setting.
+
+		// In the event site sets comment_max_links higher than max_max_limit,
+		// adjust the fallback max to be 10 higher than comment_max_links.
+		$max_max_links = ( $max_links > $max_max_links ) ? ( $max_links + 10 ) : $max_max_links;
+
+		// Bail if the number of links exceeds the true max.
+		if ( $num_links >= $max_max_links ) {
+			return $num_links;
+		}
+
 		// Get whitelisted URLs.
 		$whitelist_urls = trim( get_option( self::$setting_name ) );
 
