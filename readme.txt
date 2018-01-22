@@ -22,7 +22,7 @@ Simply install this plugin and specify a list of trusted domains, and then links
 
 Note: It is unnecessary to specify the protocol when listing URLs. Also, subdomains are inferred and need not be explicitly listed.
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/comment-link-moderation-whitelist/) | [Plugin Directory Page](https://wordpress.org/plugins/comment-link-moderation-whitelist/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/comment-link-moderation-whitelist/) | [Plugin Directory Page](https://wordpress.org/plugins/comment-link-moderation-whitelist/) | [GitHub](https://github.com/coffe2code/comment-link-moderation-whitelist/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
