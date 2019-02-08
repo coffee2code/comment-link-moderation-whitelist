@@ -23,9 +23,11 @@
 
 /*
  * TODO:
- * - Support (vai UI setting and/or constant) the ability to define an
- *   alternative max links limit that takes into account raw link count (so the
- *   plugin can't be abused to post, say, 100 whitelisted URLs)
+ * - Support (via UI setting and/for filter and/or constant) the ability to define
+ *   an alternative max links limit that takes into account raw link count (so the
+ *   plugin can't be abused to post, say, 100 whitelisted URLs). Currently a
+ *   hardcoded max limit is set (at 25) of the max number of whitelisted plus
+ *   non-whitelisted links used in a comment.
  * - Add support for constant to disable admin UI and instead use whitelisted
  *   URLs defined via constnat.
  * - Add filter so list of whitelisted URLs can be programmatically modified.
