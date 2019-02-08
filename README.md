@@ -17,7 +17,9 @@ See [readme.txt](https://github.com/coffee2code/comment-link-moderation-whitelis
 
 ## Support
 
-Commercial support and custom development are not presently available. You can raise an [issue](https://github.com/coffee2code/comment-link-moderation-whitelist/issues) on GitHub or post in the [plugin's support forum on WordPress.org](https://wordpress.org/support/plugin/comment-link-moderation-whitelist/). If the plugin has been of benefit to you, how about [submitting a review](https://wordpress.org/support/plugin/comment-link-moderation-whitelist/reviews/) for it in the WordPress Plugin Directory or considerating a [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522)?
+Commercial support and custom development are not presently available. You can raise an [issue](https://github.com/coffee2code/comment-link-moderation-whitelist/issues) on GitHub or post in the [plugin's support forum on WordPress.org](https://wordpress.org/support/plugin/comment-link-moderation-whitelist/).
+
+If the plugin has been of benefit to you, how about [submitting a review](https://wordpress.org/support/plugin/comment-link-moderation-whitelist/reviews/) for it in the WordPress Plugin Directory or considerating a [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522)?
 
 
 ## License

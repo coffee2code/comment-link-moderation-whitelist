@@ -71,6 +71,7 @@ Yes.
 * Fix: Correct typo in GitHub URL.
 * Change: Update copyright date (2019)
 * Change: Update License URI to be HTTPS
+* Change: Split paragraph in README.md's "Support" section into two
 
 = 1.0 (2018-01-22) =
 * Initial public release
