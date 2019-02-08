@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.7
 Tested up to: 5.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 Allows for whitelisted URLs to not count against the comment moderation max number of links limit.
 
@@ -66,7 +66,7 @@ Yes.
 
 == Changelog ==
 
-= () =
+= 1.1 (2019-02-07) =
 * Change: Initialize plugin on `plugins_loaded` action instead of on load
 * Change: Merge `do_init()` into `init()`
 * Change: Note compatibility through WP 5.1+
@@ -82,6 +82,9 @@ Yes.
 
 
 == Upgrade Notice ==
+
+= 1.1 =
+Minor update: tweaked plugin initialization, noted compatibility through WP 5.1+, and updated copyright date (2019)
 
 = 1.0 =
 Initial public release.
