@@ -83,6 +83,10 @@ class Comment_Link_Moderation_Whitelist_Test extends WP_UnitTestCase {
 		$this->assertEquals( '1.0', c2c_CommentLinkModerationWhitelist::version() );
 	}
 
+	public function test_hooks_plugins_loaded() {
+		$this->assertEquals( 10, has_action( 'plugins_loaded', array( 'c2c_CommentLinkModerationWhitelist', 'init' ) ) );
+	}
+
 	// Duplicates core test of this behavior.
 	public function test_should_return_false_when_link_count_exceeds_comment_max_length_setting() {
 		$this->assertFalse( $this->check_comment() );

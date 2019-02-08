@@ -78,18 +78,11 @@ class c2c_CommentLinkModerationWhitelist {
 	 * @since 1.0
 	 */
 	public static function init() {
-		add_action( 'init',       array( __CLASS__, 'do_init' ) );
-		add_action( 'admin_init', array( __CLASS__, 'initialize_setting' ), 9 );
-	}
-
-	/**
-	 * Performs initializations on the 'init' action.
-	 *
-	 * @since 1.0
-	 */
-	public static function do_init() {
 		// Load textdomain.
 		load_plugin_textdomain( 'comment-link-moderation-whitelist' );
+
+		// Initialize setting.
+		add_action( 'admin_init', array( __CLASS__, 'initialize_setting' ), 9 );
 
 		// Register hooks.
 		add_filter( 'comment_max_links_url', array( __CLASS__, 'comment_max_links_url' ), 10, 3 );
