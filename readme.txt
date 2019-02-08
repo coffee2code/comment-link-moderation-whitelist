@@ -53,7 +53,7 @@ Yes, you can input something like "example.com/docs/" to allow only links relati
 
 = Does this completely negate any checking for the number of links in a comment if a commenter uses an excessive number of whitelisted URLs? =
 
-For the most part, no. There is a hardcoded maximum number of comment links limit of 25 (which will become a configure setting in a future release). If the number of comment links exceeds this number, regardless of whatever URLs are whitelisted, then the comment will be flagged for moderation. In the event WordPress is given a comment max links limit greater than 25, then the fallback maximum will be 10 higher than that limit.
+No. There is a hardcoded maximum number of comment links limit of 25 (which will become a configurable setting in a future release). If the number of comment links exceeds this number, regardless of whatever URLs are whitelisted, then the comment will be flagged for moderation. In the event WordPress is given a comment max links limit greater than 25, then the fallback maximum for whitelisted + non-whitelisted URL will be 10 higher than that limit. This limit exists to prevent abuse by a commenter including an excessive number of whitelisted URLs.
 
 = Does this plugin include unit tests? =
 
