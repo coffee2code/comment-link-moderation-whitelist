@@ -67,6 +67,7 @@ Yes.
 == Changelog ==
 
 = () =
+* Change: Initialize plugin on `plugins_loaded` action instead of on load
 * Change: Note compatibility through WP 5.1+
 * Change: Add README.md link to plugin's page in Plugin Directory
 * Fix: Correct typo in GitHub URL.

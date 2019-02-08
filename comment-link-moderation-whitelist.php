@@ -264,6 +264,6 @@ class c2c_CommentLinkModerationWhitelist {
 
 } // end c2c_CommentLinkModerationWhitelist
 
-c2c_CommentLinkModerationWhitelist::init();
+add_action( 'plugins_loaded', array( 'c2c_CommentLinkModerationWhitelist', 'init' ) );
 
 endif; // end if !class_exists()
