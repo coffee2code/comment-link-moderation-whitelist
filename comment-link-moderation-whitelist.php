@@ -7,7 +7,7 @@
  * Author URI:  http://coffee2code.com/
  * Text Domain: comment-link-moderation-whitelist
  * License:     GPLv2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Description: Allows for whitelisted URLs to not count against the comment moderation max number of links limit.
  *
  * Compatible with WordPress 4.7 through 4.9+.
