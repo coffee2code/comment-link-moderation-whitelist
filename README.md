@@ -2,6 +2,8 @@
 
 A plugin for WordPress that allows for whitelisted URLs to not count against the comment moderation max number of links limit.
 
+This plugin is available in the WordPress Plugin Directory: https://wordpress.org/plugins/comment-link-moderation-whitelist/
+
 
 ## Installation
 
