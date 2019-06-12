@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.7
 Tested up to: 5.2
-Stable tag: 1.1
+Stable tag: 1.1.1
 
 Allows for whitelisted URLs to not count against the comment moderation max number of links limit.
 
@@ -66,6 +66,11 @@ Yes.
 
 == Changelog ==
 
+= 1.1.1 (2019-06-11) =
+* New: Add CHANGELOG.md file and move all but most recent changelog entries into it
+* Change: Update unit test install script and bootstrap to use latest WP unit test repo
+* Change: Note compatibility through WP 5.2+
+
 = 1.1 (2019-02-07) =
 * Change: Initialize plugin on `plugins_loaded` action instead of on load
 * Change: Merge `do_init()` into `init()`
@@ -84,6 +89,9 @@ _Full changelog is available in [CHANGELOG.md](CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.1.1 =
+Trivial update: modernized unit tests, created CHANGELOG.md to store historical changelog outside of readme.txt, noted compatibility through WP 5.2+
 
 = 1.1 =
 Minor update: tweaked plugin initialization, noted compatibility through WP 5.1+, and updated copyright date (2019)

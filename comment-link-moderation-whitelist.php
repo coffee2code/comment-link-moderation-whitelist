@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Comment Link Moderation Whitelist
- * Version:     1.1
+ * Version:     1.1.1
  * Plugin URI:  http://coffee2code.com/wp-plugins/comment-link-moderation-whitelist/
  * Author:      Scott Reilly
  * Author URI:  http://coffee2code.com/
@@ -18,7 +18,7 @@
  *
  * @package Comment_Link_Moderation_Whitelist
  * @author  Scott Reilly
- * @version 1.1
+ * @version 1.1.1
  */
 
 /*
@@ -71,7 +71,7 @@ class c2c_CommentLinkModerationWhitelist {
 	 * @since 1.0
 	 */
 	public static function version() {
-		return '1.1';
+		return '1.1.1';
 	}
 
 	/**
