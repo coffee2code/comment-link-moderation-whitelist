@@ -80,6 +80,8 @@ Yes.
 = 1.0 (2018-01-22) =
 * Initial public release
 
+_Full changelog is available in [CHANGELOG.md](CHANGELOG.md)._
+
 
 == Upgrade Notice ==
 
