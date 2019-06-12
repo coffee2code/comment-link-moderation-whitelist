@@ -5,7 +5,7 @@ Tags: comment, moderation, comment_max_links, coffee2code
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.7
-Tested up to: 5.1
+Tested up to: 5.2
 Stable tag: 1.1
 
 Allows for whitelisted URLs to not count against the comment moderation max number of links limit.
