@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* Fix: Use full path to CHANGELOG.md in the Changelog section of readme.txt
 * Change: Note compatibility through WP 5.3+
 * Change: Update copyright date (2020)
 
