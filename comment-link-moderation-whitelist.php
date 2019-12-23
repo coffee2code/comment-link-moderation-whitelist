@@ -10,7 +10,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Description: Allows for whitelisted URLs to not count against the comment moderation max number of links limit.
  *
- * Compatible with WordPress 4.7 through 5.2+.
+ * Compatible with WordPress 4.7 through 5.3+.
  *
  * =>> Read the accompanying readme.txt file for instructions and documentation.
  * =>> Also, visit the plugin's homepage for additional information and updates.
