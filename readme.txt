@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.7
 Tested up to: 5.3
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 
 Allows for whitelisted URLs to not count against the comment moderation max number of links limit.
 
@@ -66,6 +66,11 @@ Yes.
 
 == Changelog ==
 
+= 1.1.2 (2019-12-22) =
+* Docs fix: Use full path to CHANGELOG.md in the Changelog section of readme.txt
+* Change: Note compatibility through WP 5.3+
+* Change: Update copyright date (2020)
+
 = 1.1.1 (2019-06-11) =
 * New: Add CHANGELOG.md file and move all but most recent changelog entries into it
 * Change: Update unit test install script and bootstrap to use latest WP unit test repo
@@ -82,13 +87,13 @@ Yes.
 * Change: Update License URI to be HTTPS
 * Change: Split paragraph in README.md's "Support" section into two
 
-= 1.0 (2018-01-22) =
-* Initial public release
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/comment-link-moderation-whitelist/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.1.2 =
+Trivial update: noted compatibility through WP 5.3+ and updated copyright date (2020)
 
 = 1.1.1 =
 Trivial update: modernized unit tests, created CHANGELOG.md to store historical changelog outside of readme.txt, noted compatibility through WP 5.2+
