@@ -2,6 +2,7 @@
 
 ## _(in-progress)_
 * Change: Note compatibility through WP 5.3+
+* Change: Update copyright date (2020)
 
 ## 1.1.1 _(2019-06-11)_
 * New: Add CHANGELOG.md file and move all but most recent changelog entries into it
