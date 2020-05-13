@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 4.7
 Tested up to: 5.4
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 
 Allows for whitelisted URLs to not count against the comment moderation max number of links limit.
 
@@ -66,6 +66,11 @@ Yes.
 
 == Changelog ==
 
+= 1.1.3 (2020-05-12) =
+* Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
+* Change: Note compatibility through WP 5.4+
+* Change: Update links to coffee2code.com to be HTTPS
+
 = 1.1.2 (2019-12-22) =
 * Docs fix: Use full path to CHANGELOG.md in the Changelog section of readme.txt
 * Change: Note compatibility through WP 5.3+
@@ -76,21 +81,13 @@ Yes.
 * Change: Update unit test install script and bootstrap to use latest WP unit test repo
 * Change: Note compatibility through WP 5.2+
 
-= 1.1 (2019-02-07) =
-* Change: Initialize plugin on `plugins_loaded` action instead of on load
-* Change: Merge `do_init()` into `init()`
-* Change: Note compatibility through WP 5.1+
-* Change: Add README.md link to plugin's page in Plugin Directory
-* Change: Add more unit tests related to the registering of hooks
-* Fix: Correct typo in GitHub URL.
-* Change: Update copyright date (2019)
-* Change: Update License URI to be HTTPS
-* Change: Split paragraph in README.md's "Support" section into two
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/comment-link-moderation-whitelist/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.1.3 =
+Trivial update: Updated a few URLs to be HTTPS and noted compatibility through WP 5.4+.
 
 = 1.1.2 =
 Trivial update: noted compatibility through WP 5.3+ and updated copyright date (2020)

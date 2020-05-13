@@ -80,7 +80,7 @@ class Comment_Link_Moderation_Whitelist_Test extends WP_UnitTestCase {
 	}
 
 	public function test_plugin_version() {
-		$this->assertEquals( '1.1.2', c2c_CommentLinkModerationWhitelist::version() );
+		$this->assertEquals( '1.1.3', c2c_CommentLinkModerationWhitelist::version() );
 	}
 
 	public function test_hooks_plugins_loaded() {
